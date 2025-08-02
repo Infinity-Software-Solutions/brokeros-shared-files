@@ -5,6 +5,8 @@
       <span class="sr-only">theme switcher</span>
         <select id="tailwindUIThemeSwircher" onchange="setTheme(this.value)">
           <option>Select</option>
+          <option value="brokeros-blue">BrokerOS Blue</option>
+          <option value="brokeros-regal-blue">BrokerOS Regal</option>
           <option value="amber">Amber</option>
           <option value="blue">Blue</option>
           <option value="cyan">Cyan</option>
