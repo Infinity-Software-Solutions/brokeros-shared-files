@@ -1,0 +1,62 @@
+<!-- theme switcher -->
+{{ if site.Params.theme_demo_mode }}
+  <div>
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+        <select id="tailwindUIThemeSwircher" onchange="setTheme(this.value)">
+          <option>Select</option>
+          <option value="amber">Amber</option>
+          <option value="blue">Blue</option>
+          <option value="cyan">Cyan</option>
+          <option value="emerald">Emerald</option>
+          <option value="fuchsia">Fuchsia</option>
+          <option value="gray">Gray</option>
+          <option value="green">Green</option>
+          <option value="tailwind-default">Default</option>
+          <option value="indigo">Indigo</option>
+          <option value="lime">Lime</option>
+          <option value="nickels">Nickels</option>
+          <option value="neutral">Neutral</option>
+          <option value="orange">Orange</option>
+          <option value="pink">Pink</option>
+          <option value="purple">Purple</option>
+          <option value="red">Red</option>
+          <option value="rose">Rose</option>
+          <option value="sky">Sky</option>
+          <option value="slate">Slate</option>
+          <option value="spartan">Spartan</option>
+          <option value="stone">Stone</option>
+          <option value="teal">Teal</option>
+          <option value="violet">Violet</option>
+          <option value="yellow">Yellow</option>
+          <option value="zinc">Zinc</option> 
+        </select>
+    </label>
+  </div>
+
+  <!-- theme switcher -->
+
+  <script>
+    let selectedValue;
+
+    function setTheme(value) {
+      const html = document.querySelector('html')
+      html.setAttribute("data-theme", value);
+      document.cookie = "bos-data-theme=" + value;
+    }
+
+    var cookieTheme = getCookie();
+
+    if (cookieTheme) {
+      //alert("cookieTheme: " + cookieTheme);
+      document.querySelector('html').setAttribute('data-theme', cookieTheme);
+    }
+    
+    function getCookie() {
+      try { document.cookie.split('bos-data-theme=').pop().split(';').shift(); 
+      //alert (document.cookie.split('bos-data-theme=').pop().split(';').shift() )
+    }
+      catch (e) { console.log(e) }
+    }
+  </script>  
+{{ end }}
